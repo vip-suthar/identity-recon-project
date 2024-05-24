@@ -2,7 +2,7 @@
   "name": "bitespeed",
   "version": "1.0.0",
   "description": "Assignment Task",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
@@ -14,7 +14,6 @@
     "dotenv": "^16.3.1",
     "express": "^4.17.7",
     "mysql2": "^3.9.7",
-    "pg-hstore": "^2.3.4",
     "sequelize": "^6.32.1"
   },
   "devDependencies": {
