@@ -22,6 +22,7 @@ module.exports = (async function () {
     password: dbConfig.password,
     database: dbConfig.database,
     dialect: dbConfig.dialect,
+    dialectModule: require('mysql2'),
     pool: dbConfig.pool,
     logging: false,
   });
