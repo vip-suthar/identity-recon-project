@@ -1,7 +1,7 @@
 const { Sequelize } = require("sequelize");
 const { dbConfig } = require("../config");
 
-const Contact = require("../models/contact.model");
+const Contact = require("../models/Contact.model");
 
 // A simple object to cache the sequelize instance
 // and models so that it does not run again and again.
