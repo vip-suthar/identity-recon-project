@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Sequelize, Op } = require("sequelize");
+const { Op, DataTypes } = require("sequelize");
 const SQLConnection = require("../services/db.service");
 
 const joinChains = async (ch1, ch2, { models }) => {
@@ -35,7 +35,7 @@ const joinChains = async (ch1, ch2, { models }) => {
         {
           linkedId: primaryIdCh1,
           linkPrecedence: "secondary",
-          updatedAt: Sequelize.literal("CURRENT_TIMESTAMP"),
+          updatedAt: DataTypes.NOW,
         },
         {
           where: {
@@ -48,7 +48,7 @@ const joinChains = async (ch1, ch2, { models }) => {
         {
           linkedId: primaryIdCh2,
           linkPrecedence: "secondary",
-          updatedAt: Sequelize.literal("CURRENT_TIMESTAMP"),
+          updatedAt: DataTypes.NOW,
         },
         {
           where: {
@@ -116,6 +116,8 @@ const processInput = async ({ email, phoneNumber, models }) => {
       phoneNumber,
       linkedId: foundContact.linkedId || foundContact.id,
       linkPrecedence: "secondary",
+      // createdAt: Date.now(),
+      // updatedAt: Date.now()
     });
   } else {
     await joinChains(foundContact, foundContactByParam, { models });

@@ -29,7 +29,7 @@ app.listen(PORT, async () => {
   try {
     const { sequelize } = await SQLConnection;
     if (sequelize) {
-      await sequelize.sync({ force: true });
+      await sequelize.sync();
       console.log("table sync in db successfully");
     }
   } catch (error) {
