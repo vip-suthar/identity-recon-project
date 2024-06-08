@@ -22,7 +22,7 @@ module.exports = (async function () {
     password: dbConfig.password,
     database: dbConfig.database,
     dialect: dbConfig.dialect,
-    // dialectModule: require('mssql'),
+    dialectModule: require('tedious'),
     pool: dbConfig.pool,
     logging: false,
   });
